@@ -1,0 +1,27 @@
+
+
+
+<h1>Friends</h1>
+
+
+<% if @friends.present? %>
+  <% if @friends.empty? %>
+    <p>Hey there <%= current_profile.email%>, You have no friends!! :(</p>
+  <% else %>
+    <% @friends.each do |friend| %>
+      <% if friend.profile == current_profile %>
+        <%= render friend %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% else %>
+  <%if profile_signed_in? %>
+    <p>Hey there <%= current_profile.email%>, You have no friends!! :(</p>
+
+    <%else%>
+    <p>Cannot retrieve friends, please sign in</p>
+  <%end%>
+
+<% end %>
+
+<%= link_to "New friend", new_friend_path %>

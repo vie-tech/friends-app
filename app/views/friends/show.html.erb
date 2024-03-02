@@ -1,0 +1,21 @@
+
+<h3>Hey there <%= @friend.first_name %></h3>
+
+<div >
+  <div class="card-content">
+    <p><strong>Firstname:</strong>  <%= @friend.first_name %></p>
+    <p><strong>Lastname: </strong><%= @friend.last_name %></p>
+    <p><strong> Email:</strong> <%= @friend.email %></p>
+    <p><strong>Phone</strong> <%= @friend.phone %></p>
+    <p><strong>Twitter: </strong> <%= @friend.twitter %></p>
+  </div>
+
+<div >
+  <%= link_to "Edit this friend", edit_friend_path(@friend), class: "card-action"%>
+  <%= link_to "Back to friends", friends_path, class: "card-action"%>
+
+  <%= button_to "Destroy this friend", @friend, class: "waves-effect waves-light btn-small white-text", method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+
+</div>
+

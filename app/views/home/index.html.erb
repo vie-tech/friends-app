@@ -1,0 +1,5 @@
+<% if profile_signed_in? %>
+<h1>Welcome <%= current_profile.email %></h1>
+  <%else %>
+  <p>Hello Stranger, Sign in so i know who you are !!</p>
+<% end %>
